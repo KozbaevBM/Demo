@@ -1,0 +1,1 @@
+$wnd.org_vaadin_hezamu_canvas_demo_DemoWidgetset.runAsyncCallback2('aeb(1719,1,eUd);_.Ac=function fgc(){NYb((!FYb&&(FYb=new VYb),FYb),this.a.d)};rOd(Fj)(2);\n//# sourceURL=org.vaadin.hezamu.canvas.demo.DemoWidgetset-2.js\n')
