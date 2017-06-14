@@ -37,12 +37,11 @@ public class Demo extends UI {
 	Star star1;
 	Star1 star11;
 	Planet planet1;
-	Faceplanet faceplanet1;
-	Atmosphere atmosphere1;
+
 	Ship ship1;
 		private Canvas canvas;
-		public TodoResource todoResource;
-	//	Client client = new Client(); 
+
+
 //	@WebServlet(value = { "/*", "/VAADIN/*" }, asyncSupported = true)
 //	@VaadinServletConfiguration(productionMode = false, ui = Demo.class)
 	@WebServlet(value = "/*", asyncSupported = true)
@@ -91,13 +90,9 @@ public class Demo extends UI {
 		VerticalLayout content = new VerticalLayout();
 		setContent(content);
 
-		// Instantiate the component and add it to your UI
 		content.addComponent(canvas = new Canvas());
+		JerseyClientGet.SomeClass();
 
-		// Draw a 20x20 filled rectangle with the upper left corner
-		// in coordinate 10,10. It will be filled with the default
-		// color which is black.
-		
 		canvas.setHeight(1000,UNITS_PIXELS);
 		canvas.setWidth(1000, UNITS_PIXELS);
 		
@@ -109,8 +104,7 @@ public class Demo extends UI {
 		star11 = new Star1(canvas, 330, 340).draw();
 		ship1 = new Ship(canvas, 300, 150).draw();
 		planet1 = new Planet(canvas, 100, 100).draw();
-	//	faceplanet1 = new Faceplanet(canvas).draw();
-	//	atmosphere1 = new Atmosphere(canvas).draw();
+
 		moon1 = new Moon(canvas, 100, 500).draw();
 		anime();
 		
