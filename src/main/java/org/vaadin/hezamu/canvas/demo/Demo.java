@@ -24,7 +24,7 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.shared.MouseEventDetails;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-
+import org.vaadin.hezamu.canvas.demo.RestClient;
 import org.vaadin.hezamu.canvas.Canvas;
 
 @SuppressWarnings("serial")
@@ -37,6 +37,7 @@ public class Demo extends UI {
 	Star star1;
 	Star1 star11;
 	Planet planet1;
+	GSONExample myGsona;
 
 	Ship ship1;
 		private Canvas canvas;
@@ -56,24 +57,28 @@ public class Demo extends UI {
 				ui.access(() -> {
 				try {
 				planet1.erase();
+//				if (myGsona.Who == 0)
+//				{
+//					moon1.fly(bigstar1);
+//					
+//				}
 			    moon1.erase();
 			    bigstar1.erase();
 			    star1.erase();
 			    star11.erase();
 			    ship1.erase();
+			    moon1.draw();
 				bigstar1.fly();
 				bigstar1.draw();
 				star1.fly();
 				star1.draw();
-				moon1.fly(bigstar1);
-				moon1.draw();
 				star11.draw();
 				star11.fly();
 				ship1.draw();
 				ship1.fly(bigstar1);
 				planet1.draw();
      			planet1.fly();
-		
+     			RestClient.getEvents();
 				UI.getCurrent().push();
 				}
 				catch (Exception e){
@@ -91,20 +96,20 @@ public class Demo extends UI {
 		setContent(content);
 
 		content.addComponent(canvas = new Canvas());
-		JerseyClientGet.SomeClass();
-
+	
+		
 		canvas.setHeight(1000,UNITS_PIXELS);
 		canvas.setWidth(1000, UNITS_PIXELS);
 		
 		canvas.setFillStyle("blue");
 	    canvas.fillRect(0, 0, 1000, 1000);
-	   
+	    myGsona = new GSONExample();
+	  
 		bigstar1 = new Bigstar(canvas, 360, 360).draw();
 		star1 = new Star(canvas, 230, 430).draw();
 		star11 = new Star1(canvas, 330, 340).draw();
 		ship1 = new Ship(canvas, 300, 150).draw();
 		planet1 = new Planet(canvas, 100, 100).draw();
-
 		moon1 = new Moon(canvas, 100, 500).draw();
 		anime();
 		

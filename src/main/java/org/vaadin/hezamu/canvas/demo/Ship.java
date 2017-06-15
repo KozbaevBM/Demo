@@ -81,6 +81,7 @@ public class Ship {
 	 		if((Math.abs((this.x+125)-(bigstar1.x+100))<=225) && (Math.abs(this.y-bigstar1.y)<=100))
 	 		{
 	 			System.out.println("collision");
+	 			RestClient.postAnything( 0 , 0 );
 	 			this.right=!right;
 	 			this.down=!down;
 	 		}
