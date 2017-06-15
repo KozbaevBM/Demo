@@ -22,7 +22,7 @@ public class RestClient{
 			ClientResponse response = webResource.accept("application/json") 
 					.get(ClientResponse.class); 
 
-			if (response.getStatus() != 200) { 
+			if (response.getStatus() != 200 && response.getStatus() != 201) { 
 				throw new RuntimeException("Failed : HTTP error code : " 
 						+ response.getStatus()); 
 			} 
@@ -50,7 +50,7 @@ public class RestClient{
 			ClientResponse response = webResource.accept("application/json")
 					.delete(ClientResponse.class); 
 
-			if (response.getStatus() != 200) { 
+			if (response.getStatus() != 200 && response.getStatus() != 201) { 
 				throw new RuntimeException("Failed : HTTP error code : " 
 						+ response.getStatus()); 
 			} 
@@ -93,7 +93,7 @@ public class RestClient{
 					.type("application/json;charset=utf-8")
 					.post(ClientResponse.class,"{\"id\":"+123L+",\"x\":"+x+",\"y\":"+y+",\"who\":"+1+"}");
 
-			if (response.getStatus() != 200) { 
+			if (response.getStatus() != 200 && response.getStatus() != 201) { 
 				throw new RuntimeException("Failed : HTTP error code : " 
 						+ response.getStatus()); 
 			} 
